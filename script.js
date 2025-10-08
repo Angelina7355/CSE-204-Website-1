@@ -1,6 +1,6 @@
 const button = document.querySelector("button");
 const formElements = document.querySelectorAll(".form-elements");
-const toggleabletext = document.querySelector("#toggleable-text");
+const toggleableElements = document.querySelectorAll(".toggleable-text");
 const additionalNotes = document.querySelector("#additional-notes");
 const charCount = document.querySelector("#char-count");
 
@@ -13,9 +13,15 @@ additionalNotes.addEventListener("input", () => {
 
 // Prevents user from submitting another form
 button.addEventListener("click", (e) => {
-    e.preventDefault(); // Prevents submission from bringing user to top of page
-    toggleabletext.style.display = "block";
+    // Prevents submission from bringing user to top of page
+    e.preventDefault();
 
+    // Shows hidden text upon submission
+    toggleableElements.forEach((element) => {
+        element.style.display = "block";
+    });
+
+    // Disables form elements
     formElements.forEach((element) => {
         element.disabled = true;
     });
