@@ -6,6 +6,7 @@
         <title>
             Women in Game Development: Unequal on and Behind the Screen
         </title>
+        <link rel="icon" href="Video Game Controller Icon.png" />
         <link href="styles.css" rel="stylesheet" />
     </head>
     <body>
@@ -173,12 +174,19 @@
             <section>
                 <h2>We Want Your Input</h2>
                 <form>
+                    <p id="toggleable-text">
+                        <strong
+                            >You have already submitted this form once. You
+                            cannot submit another.</strong
+                        >
+                    </p>
                     <p>Do you work in the gaming industry?</p>
                     <input
                         type="radio"
                         id="agree-yes"
                         name="agreement"
                         value="yes"
+                        class="form-elements"
                     />
                     <label for="agree-yes">Yes</label>
 
@@ -187,26 +195,35 @@
                         id="agree-no"
                         name="agreement"
                         value="no"
+                        class="form-elements"
                     />
                     <label for="agree-no">No</label>
 
                     <p>What gender do you identify with?</p>
                     <input
-                        type="radio"
+                        type="checkbox"
                         id="female"
                         name="gender"
                         value="female"
+                        class="form-elements"
                     />
                     <label for="female">Female</label>
 
-                    <input type="radio" id="male" name="gender" value="male" />
+                    <input
+                        type="checkbox"
+                        id="male"
+                        name="gender"
+                        value="male"
+                        class="form-elements"
+                    />
                     <label for="male">Male</label>
 
                     <input
-                        type="radio"
+                        type="checkbox"
                         id="other"
                         name="gender"
                         value="other"
+                        class="form-elements"
                     />
                     <label for="other">Other</label>
 
@@ -220,57 +237,66 @@
 
                     <p>
                         <input
-                            type="checkbox"
+                            type="radio"
                             id="every-day"
                             name="effect"
                             value="every-day"
+                            class="form-elements"
                         />
                         <label for="every-day">Everyday</label>
                     </p>
                     <p>
                         <input
-                            type="checkbox"
+                            type="radio"
                             id="sometimes"
                             name="effect"
                             value="sometimes"
+                            class="form-elements"
                         />
                         <label for="sometimes">Sometimes</label>
                     </p>
                     <p>
                         <input
-                            type="checkbox"
+                            type="radio"
                             id="neutral"
                             name="effect"
                             value="neutral"
+                            class="form-elements"
                         />
                         <label for="neutral">Neutral</label>
                     </p>
                     <p>
                         <input
-                            type="checkbox"
+                            type="radio"
                             id="rarely"
                             name="effect"
                             value="rarely"
+                            class="form-elements"
                         />
                         <label for="rarely">Rarely</label>
                     </p>
                     <p>
                         <input
-                            type="checkbox"
+                            type="radio"
                             id="never"
                             name="effect"
                             value="never"
+                            class="form-elements"
                         />
                         <label for="never">Never</label>
                     </p>
 
                     <label for="additional-notes">Additional Notes: </label>
-                    <input
-                        type="text"
+                    <textarea
                         id="additional-notes"
-                        name="username"
-                        title="Enter any additional notes you would like to provide us with here."
-                    />
+                        name="notes"
+                        placeholder="Enter any additional notes you would like to provide here."
+                        class="form-elements"
+                        rows="5"
+                        cols="40"
+                        maxlength="100"
+                    ></textarea>
+                    <p>Character Count: <span id="char-count">0/100</span></p>
                     <br />
 
                     <button type="submit">Submit</button>
@@ -347,6 +373,6 @@
             <p>&copy; 2025 Angelina Viviano</p>
         </footer>
 
-        <script href="script.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
